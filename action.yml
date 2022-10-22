@@ -1,13 +1,21 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Changie'
+description: 'Run Changie commands as part of a GitHub action workflow'
+author: 'miniscruff'
+branding:
+  color: 'green'
+  icon: 'package'
+
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  version:
+    description: 'Changie version'
+    default: 'latest'
+    required: false
+  args:
+    description: 'Arguments to pass to Changie'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+
+outputs: {}
+
 runs:
   using: 'node16'
   main: 'dist/index.js'

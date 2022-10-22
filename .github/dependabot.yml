@@ -3,9 +3,15 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: daily
+      interval: "daily"
+    labels:
+      - "skip changelog"
+      - "dependencies"
 
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: daily
+      interval: "daily"
+    labels:
+      - "skip changelog"
+      - "dependencies"
