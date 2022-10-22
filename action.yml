@@ -1,8 +1,8 @@
-name: 'Changie'
+name: 'Changie Action'
 description: 'Run Changie commands as part of a GitHub action workflow'
 author: 'miniscruff'
 branding:
-  color: 'green'
+  color: 'purple'
   icon: 'package'
 
 inputs:
