@@ -11,7 +11,7 @@ export async function install(version: string): Promise<string> {
         throw new Error(`Cannot find Changie ${version} release`);
     }
 
-    const filename = getFilename();
+    const filename = getFilename(tag);
     const downloadUrl = util.format(
         "https://github.com/miniscruff/changie/releases/download/%s/%s",
         tag,
@@ -44,20 +44,19 @@ export async function install(version: string): Promise<string> {
     return exePath;
 }
 
-const getFilename = (): string => {
+const getFilename = (version: string): string => {
     let arch: string;
     switch (context.osArch) {
         case "x64": {
-            arch = "x86_64";
+            arch = "amd64";
             break;
         }
         case "x32": {
-            arch = "i386";
+            arch = "386";
             break;
         }
         case "arm": {
-            const arm_version = (process.config.variables as any).arm_version;
-            arch = arm_version ? "armv" + arm_version : "arm";
+            arch = "arm64";
             break;
         }
         default: {
@@ -66,16 +65,13 @@ const getFilename = (): string => {
         }
     }
 
-    if (context.osPlat == "darwin") {
-        arch = "all";
-    }
-
     const platform: string =
         context.osPlat == "win32"
-            ? "Windows"
+            ? "windows"
             : context.osPlat == "darwin"
-                ? "Darwin"
-                : "Linux";
+                ? "darwin"
+                : "linux";
+
     const ext: string = context.osPlat == "win32" ? "zip" : "tar.gz";
-    return util.format("changie_%s_%s.%s", platform, arch, ext);
+    return util.format("changie_%s_%s.%s", version, platform, arch, ext);
 };
