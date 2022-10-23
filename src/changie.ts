@@ -81,12 +81,14 @@ const getFilename = (version: string): string => {
     console.log(`platform: ${platform}`);
     console.log(`ext: ${ext}`);
 
-    core.info(`osArch: ${context.osArch}`);
-    core.info(`osPlat: ${context.osPlat}`);
-    core.info(`version: ${version}`);
-    core.info(`arch: ${arch}`);
-    core.info(`platform: ${platform}`);
-    core.info(`ext: ${ext}`);
+    core.warning(`osArch: ${context.osArch}`);
+    core.warning(`osPlat: ${context.osPlat}`);
+    core.warning(`version: ${version}`);
+    core.warning(`arch: ${arch}`);
+    core.warning(`platform: ${platform}`);
+    core.warning(`ext: ${ext}`);
 
-    return `changie_${version}_${platform}_${arch}.${ext}`;
+    const filename = `changie_${version}_${platform}_${arch}.${ext}`;
+    core.info(`filename: ${filename}`);
+    return filename;
 };
