@@ -73,5 +73,13 @@ const getFilename = (version: string): string => {
                 : "linux";
 
     const ext: string = context.osPlat == "win32" ? "zip" : "tar.gz";
+
+    core.debug(`osArch: ${context.osArch}`);
+    core.debug(`osPlat: ${context.osPlat}`);
+    core.debug(`version: ${version}`);
+    core.debug(`arch: ${arch}`);
+    core.debug(`platform: ${platform}`);
+    core.debug(`ext: ${ext}`);
+
     return util.format("changie_%s_%s.%s", version, platform, arch, ext);
 };
