@@ -11,9 +11,6 @@ export async function install(version: string): Promise<string> {
         throw new Error(`Cannot find Changie ${version} release`);
     }
 
-    core.info(`osArch: ${context.osArch}`);
-    core.info(`osPlat: ${context.osPlat}`);
-    core.info(`version: ${tag}`);
     const filename = getFilename(tag);
     const downloadUrl = util.format(
         "https://github.com/miniscruff/changie/releases/download/%s/%s",
@@ -76,6 +73,15 @@ const getFilename = (version: string): string => {
                 : "linux";
 
     const ext: string = context.osPlat == "win32" ? "zip" : "tar.gz";
+
+    if (core.isDebug()) {
+        core.debug(`osArch: ${context.osArch}`);
+        core.debug(`osPlat: ${context.osPlat}`);
+        core.debug(`version: ${version}`);
+        core.debug(`arch: ${arch}`);
+        core.debug(`platform: ${platform}`);
+        core.debug(`ext: ${ext}`);
+    }
 
     return `changie_${version}_${platform}_${arch}.${ext}`;
 };
