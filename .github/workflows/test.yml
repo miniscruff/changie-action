@@ -1,4 +1,4 @@
-name: "units-test"
+name: "unit-test"
 on:
   pull_request:
   push:
@@ -20,8 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./
+    - name: Run version
+      uses: ./
       with:
-        args: latest
+        args: '--version'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

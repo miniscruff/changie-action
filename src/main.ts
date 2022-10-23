@@ -7,6 +7,8 @@ import * as exec from "@actions/exec";
 async function run(): Promise<void> {
   try {
     const inputs: context.Inputs = await context.getInputs();
+    core.info(`Changie inputs ${inputs}`);
+
     const bin = await changie.install(inputs.version);
     core.info(`Changie ${inputs.version} installed successfully`);
 
