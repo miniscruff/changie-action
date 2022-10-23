@@ -11,11 +11,14 @@ export async function install(version: string): Promise<string> {
         throw new Error(`Cannot find Changie ${version} release`);
     }
 
+    core.info(`osArch: ${context.osArch}`);
+    core.info(`osPlat: ${context.osPlat}`);
+    core.info(`version: ${tag}`);
     const filename = getFilename(tag);
     const downloadUrl = util.format(
         "https://github.com/miniscruff/changie/releases/download/%s/%s",
         tag,
-        filename
+        filename,
     );
 
     core.info(`Downloading ${downloadUrl}`);
@@ -74,12 +77,5 @@ const getFilename = (version: string): string => {
 
     const ext: string = context.osPlat == "win32" ? "zip" : "tar.gz";
 
-    core.info(`osArch: ${context.osArch}`);
-    core.info(`osPlat: ${context.osPlat}`);
-    core.info(`version: ${version}`);
-    core.info(`arch: ${arch}`);
-    core.info(`platform: ${platform}`);
-    core.info(`ext: ${ext}`);
-
-    return util.format("changie_%s_%s.%s", version, platform, arch, ext);
+    return `changie_${version}_${platform}_${arch}.${ext}`;
 };
