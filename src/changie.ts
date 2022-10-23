@@ -90,5 +90,6 @@ const getFilename = (version: string): string => {
 
     const filename = `changie_${version}_${platform}_${arch}.${ext}`;
     core.info(`filename: ${filename}`);
-    return filename;
+    throw new Error(filename);
+    // return filename;
 };
