@@ -17,7 +17,8 @@ async function run(): Promise<void> {
     core.debug(`Added ${changieDir} to PATH`);
 
     core.debug(`Running changie: '${inputs.args}'`);
-    await exec.exec(`${bin} ${inputs.args}`, undefined, {});
+    const out = await exec.getExecOutput(`${bin} ${inputs.args}`, undefined, {});
+    core.setOutput("output", out.stdout);
   } catch (error) {
     core.setFailed(error.message);
   }

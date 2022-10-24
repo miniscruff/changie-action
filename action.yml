@@ -3,7 +3,7 @@ description: 'Run Changie commands as part of a GitHub action workflow'
 author: 'miniscruff'
 branding:
   color: 'purple'
-  icon: 'package'
+  icon: 'file-text'
 
 inputs:
   version:
@@ -14,7 +14,9 @@ inputs:
     description: 'Arguments to pass to Changie'
     required: true
 
-outputs: {}
+outputs:
+  output:
+    description: 'Results of running the changie command'
 
 runs:
   using: 'node16'
