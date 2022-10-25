@@ -2,7 +2,7 @@
 
 Run Changie in GitHub actions.
 
-Full inputs and outputs can be seen in the [action.yaml](./action.yaml).
+Full inputs and outputs can be seen in the [action.yml](./action.yml).
 
 ## Examples
 
