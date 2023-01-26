@@ -1,0 +1,36 @@
+name: release
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ CHANGELOG.md ]
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Get the latest version
+      id: latest
+      uses: ./
+      with:
+        version: latest
+        args: latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        draft: true
+        body_path: ".changes/${{ steps.latest.outputs.output }}.md"
+        tag_name: "${{ steps.latest.outputs.output }}"
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        draft: true
+        body: View full release notes in the [Changelog](https://github.com/miniscruff/changie-action/blob/main/CHANGELOG.md)
+        tag_name: v1 # currently no way of finding this in changie directly
