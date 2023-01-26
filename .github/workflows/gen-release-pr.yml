@@ -1,0 +1,46 @@
+name: Generate release pull request
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-pr:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - run: npm ci
+    - run: npm run build
+
+    - name: Batch changes
+      uses: ./
+      with:
+        version: latest
+        args: batch auto
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Merge changes
+      uses: ./
+      with:
+        version: latest
+        args: merge
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Get the latest version
+      id: latest
+      uses: ./
+      with:
+        version: latest
+        args: latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        title: Release ${{ steps.latest.outputs.output }}
+        branch: release/${{ steps.latest.outputs.output }}
+        commit-message: Release ${{ steps.latest.outputs.output }}
