@@ -6,15 +6,10 @@ Full inputs and outputs can be seen in the [action.yml](./action.yml).
 
 ## Examples
 
-### Generate next release pull request
+### Generate next release pull request using auto mode
 ```yaml
 on:
   workflow_dispatch:
-    inputs:
-      next-version:
-        description: 'Next version use vX.Y.Z, patch, minor or major'
-        default: 'patch'
-        required: true
 
 jobs:
   generate-pr:
@@ -27,7 +22,7 @@ jobs:
       uses: miniscruff/changie-action@v0
       with:
         version: latest
-        args: batch ${{ github.event.inputs.next-version }}
+        args: batch auto
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
