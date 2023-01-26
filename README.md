@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Batch changes
-      uses: miniscruff/changie-action@v0
+      uses: miniscruff/changie-action@v1
       with:
         version: latest
         args: batch auto
@@ -27,7 +27,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Merge changes
-      uses: miniscruff/changie-action@v0
+      uses: miniscruff/changie-action@v1
       with:
         version: latest
         args: merge
@@ -36,7 +36,7 @@ jobs:
 
     - name: Get the latest version
       id: latest
-      uses: miniscruff/changie-action@v0
+      uses: miniscruff/changie-action@v1
       with:
         version: latest
         args: latest
