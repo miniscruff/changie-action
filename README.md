@@ -23,16 +23,12 @@ jobs:
       with:
         version: latest
         args: batch auto
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Merge changes
       uses: miniscruff/changie-action@v1
       with:
         version: latest
         args: merge
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Get the latest version
       id: latest
@@ -40,8 +36,6 @@ jobs:
       with:
         version: latest
         args: latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4

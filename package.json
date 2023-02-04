@@ -1,6 +1,6 @@
 {
   "name": "changie-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub action to use Changie",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,6 @@
   "dependencies": {
     "@actions/core": "1.10.0",
     "@actions/exec": "1.1.1",
-    "@actions/github": "5.1.1",
     "@actions/http-client": "2.0.1",
     "@actions/tool-cache": "2.0.1"
   },

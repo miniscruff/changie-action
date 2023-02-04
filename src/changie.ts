@@ -1,20 +1,20 @@
 import * as path from "path";
 import * as util from "util";
 import * as context from "./context";
-import * as github from "./github";
+import * as vers from "./version";
 import * as core from "@actions/core";
 import * as tc from "@actions/tool-cache";
 
 export async function install(version: string): Promise<string> {
-    const tag: string | undefined = await github.getTag(version);
-    if (!tag) {
-        throw new Error(`Cannot find Changie ${version} release`);
+    const validVersion: string | undefined = await vers.getVersion(version);
+    if (!validVersion) {
+        throw new Error(`Cannot find Changie '${version}' release`);
     }
 
-    const filename = getFilename(tag);
+    const filename = getFilename(validVersion);
     const downloadUrl = util.format(
         "https://github.com/miniscruff/changie/releases/download/%s/%s",
-        tag,
+        validVersion,
         filename,
     );
 
@@ -32,7 +32,7 @@ export async function install(version: string): Promise<string> {
     }
     core.debug(`Extracted to ${extPath}`);
 
-    const cachePath: string = await tc.cacheDir(extPath, "changie-action", tag);
+    const cachePath: string = await tc.cacheDir(extPath, "changie-action", validVersion);
     core.debug(`Cached to ${cachePath}`);
 
     const exePath: string = path.join(
