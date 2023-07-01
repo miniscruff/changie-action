@@ -10,6 +10,10 @@ updates:
     labels:
       - "skip changelog"
       - "dependencies"
+    groups:
+      action-deps:
+        patterns:
+          - "*"
 
   - package-ecosystem: npm
     directory: /
@@ -21,3 +25,7 @@ updates:
     labels:
       - "skip changelog"
       - "dependencies"
+    groups:
+      node-deps:
+        patterns:
+          - "*"
