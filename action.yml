@@ -19,5 +19,5 @@ outputs:
     description: 'Results of running the changie command'
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'

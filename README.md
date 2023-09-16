@@ -19,20 +19,20 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Batch changes
-      uses: miniscruff/changie-action@v1
+      uses: miniscruff/changie-action@v2
       with:
         version: latest
         args: batch auto
 
     - name: Merge changes
-      uses: miniscruff/changie-action@v1
+      uses: miniscruff/changie-action@v2
       with:
         version: latest
         args: merge
 
     - name: Get the latest version
       id: latest
-      uses: miniscruff/changie-action@v1
+      uses: miniscruff/changie-action@v2
       with:
         version: latest
         args: latest
