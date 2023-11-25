@@ -32,9 +32,9 @@
     "@actions/tool-cache": "2.0.1"
   },
   "devDependencies": {
-    "@types/node": "20.9.1",
-    "@typescript-eslint/eslint-plugin": "6.11.0",
-    "@typescript-eslint/parser": "6.11.0",
+    "@types/node": "20.10.0",
+    "@typescript-eslint/eslint-plugin": "6.12.0",
+    "@typescript-eslint/parser": "6.12.0",
     "@vercel/ncc": "0.38.1",
     "dotenv": "16.3.1",
     "eslint": "8.54.0",
@@ -47,6 +47,6 @@
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "ts-node-dev": "2.0.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   }
 }
