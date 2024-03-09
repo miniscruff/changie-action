@@ -20,13 +20,13 @@ jobs:
         args: latest
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         body_path: ".changes/${{ steps.latest.outputs.output }}.md"
         tag_name: "${{ steps.latest.outputs.output }}"
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         body: View full release notes in the [Changelog](https://github.com/miniscruff/changie-action/blob/main/CHANGELOG.md)
         tag_name: v2 # currently no way of finding this in changie directly
