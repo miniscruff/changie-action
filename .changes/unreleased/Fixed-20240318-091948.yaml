@@ -1,0 +1,5 @@
+kind: Fixed
+body: Updated `latest` version URL to match new website structure
+time: 2024-03-18T09:19:48.867118-04:00
+custom:
+  Issue: "218"
