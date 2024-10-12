@@ -26,18 +26,18 @@
   },
   "homepage": "https://github.com/miniscruff/changie-action#readme",
   "dependencies": {
-    "@actions/core": "1.10.1",
+    "@actions/core": "1.11.1",
     "@actions/exec": "1.1.1",
     "@actions/http-client": "2.2.3",
     "@actions/tool-cache": "2.0.1"
   },
   "devDependencies": {
-    "@types/node": "22.7.4",
-    "@typescript-eslint/eslint-plugin": "8.7.0",
-    "@typescript-eslint/parser": "8.7.0",
+    "@types/node": "22.7.5",
+    "@typescript-eslint/eslint-plugin": "8.8.1",
+    "@typescript-eslint/parser": "8.8.1",
     "@vercel/ncc": "0.38.2",
     "dotenv": "16.4.5",
-    "eslint": "9.11.1",
+    "eslint": "9.12.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jest": "28.8.3",
     "eslint-plugin-prettier": "5.2.1",
@@ -47,6 +47,6 @@
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "ts-node-dev": "2.0.0",
-    "typescript": "5.6.2"
+    "typescript": "5.6.3"
   }
 }
