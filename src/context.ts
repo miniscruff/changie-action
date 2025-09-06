@@ -14,6 +14,6 @@ export async function getInputs(): Promise<Inputs> {
   return {
     version: core.getInput("version") || "latest",
     args: core.getInput("args"),
-    workdir: core.getInput("args") || '.',
+    workdir: core.getInput("workdir") || '.',
   };
 }
