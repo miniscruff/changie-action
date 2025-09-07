@@ -25,10 +25,8 @@ jobs:
         args: batch auto
 
     - name: Merge changes
-      uses: miniscruff/changie-action@v2
-      with:
-        version: latest
-        args: merge
+      run: |
+        changie merge
 
     - name: Get the latest version
       id: latest
@@ -43,4 +41,13 @@ jobs:
         title: Release ${{ steps.latest.outputs.output }}
         branch: release/${{ steps.latest.outputs.output }}
         commit-message: Release ${{ steps.latest.outputs.output }}
+```
+
+### Install Changie only
+```yaml
+- name: Batch changes
+  uses: miniscruff/changie-action@v2
+  with:
+    version: latest
+    # skip the args
 ```

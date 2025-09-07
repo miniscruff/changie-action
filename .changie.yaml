@@ -30,7 +30,3 @@ newlines:
   beforeKind: 1
   endOfVersion: 1
 envPrefix: CHANGIE_
-replacements:
-- path: package.json
-  find: '  "version": ".*",'
-  replace: '  "version": "{{.VersionNoPrefix}}",'

@@ -12,11 +12,16 @@ inputs:
     required: false
   args:
     description: 'Arguments to pass to Changie'
-    required: true
+    default: ''
+    required: false
+  workdir:
+    description: 'Working directory, relative to repository'
+    default: '.'
+    required: false
 
 outputs:
   output:
-    description: 'Results of running the changie command'
+    description: 'Results of running the changie command, if one is specified'
 
 runs:
   using: 'node20'
