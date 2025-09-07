@@ -17,7 +17,7 @@ async function run(): Promise<void> {
     core.addPath(changieDir);
     core.debug(`Added ${changieDir} to PATH`);
 
-    if (inputs.args !== '') {
+    if (inputs.args && inputs.args !== '') {
         if (inputs.workdir && inputs.workdir !== '.') {
           core.info(`Using ${inputs.workdir} as working directory`);
           process.chdir(inputs.workdir);
