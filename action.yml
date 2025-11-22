@@ -7,7 +7,7 @@ branding:
 
 inputs:
   version:
-    description: 'Changie version'
+    description: 'Changie version including "v" prefix'
     default: 'latest'
     required: false
   args:
