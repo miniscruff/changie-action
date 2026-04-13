@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Batch changes
-      uses: miniscruff/changie-action@v2
+      uses: miniscruff/changie-action@v3
       with:
         version: latest
         args: batch auto
@@ -30,7 +30,7 @@ jobs:
 
     - name: Get the latest version
       id: latest
-      uses: miniscruff/changie-action@v2
+      uses: miniscruff/changie-action@v3
       with:
         version: latest
         args: latest
@@ -46,7 +46,7 @@ jobs:
 ### Install Changie only
 ```yaml
 - name: Batch changes
-  uses: miniscruff/changie-action@v2
+  uses: miniscruff/changie-action@v3
   with:
     version: latest
     # skip the args
