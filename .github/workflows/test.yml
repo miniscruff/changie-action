@@ -7,12 +7,19 @@ on:
       - 'releases/*'
 
 jobs:
-  # unit tests
   units:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
+
+    - name: Setup Node
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: 24.x
     - run: npm ci
+
+    - run: npm ci
+    - run: npm run build
     # - run: npm test
 
   # test action works running from the graph
