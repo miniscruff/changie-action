@@ -11,6 +11,14 @@ export async function install(version: string): Promise<string> {
         throw new Error(`Cannot find Changie '${version}' release`);
     }
 
+    const binName: string = context.osPlat == "win32" ? "changie.exe" : "changie";
+
+    const cachedPath: string = tc.find("changie-action", validVersion);
+    if (cachedPath) {
+        core.info(`Found Changie ${validVersion} in tool cache`);
+        return path.join(cachedPath, binName);
+    }
+
     const filename = getFilename(validVersion);
     const downloadUrl = util.format(
         "https://github.com/miniscruff/changie/releases/download/%s/%s",
@@ -35,10 +43,7 @@ export async function install(version: string): Promise<string> {
     const cachePath: string = await tc.cacheDir(extPath, "changie-action", validVersion);
     core.debug(`Cached to ${cachePath}`);
 
-    const exePath: string = path.join(
-        cachePath,
-        context.osPlat == "win32" ? "changie.exe" : "changie"
-    );
+    const exePath: string = path.join(cachePath, binName);
     core.debug(`Exe path is ${exePath}`);
 
     return exePath;
