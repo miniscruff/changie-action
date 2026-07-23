@@ -25,6 +25,17 @@ jobs:
         body_path: ".changes/${{ steps.latest.outputs.output }}.md"
         tag_name: "${{ steps.latest.outputs.output }}"
 
+    # softprops/action-gh-release's tag_name only picks where to create a tag
+    # the first time it exists. On every release after the first, v3 already
+    # exists, so it just updates that release's body/notes and leaves the
+    # underlying git tag pointing at whatever commit it was last on. Move it
+    # ourselves so `uses: miniscruff/changie-action@v3` actually tracks the
+    # latest v3.x.y release.
+    - name: Move major version tag
+      run: |
+        git tag -f v3
+        git push origin v3 --force
+
     - name: Release
       uses: softprops/action-gh-release@v3
       with:
