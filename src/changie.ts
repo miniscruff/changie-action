@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as util from "util";
-import * as context from "./context.js";
-import * as vers from "./version.js";
+import * as context from "./context";
+import * as vers from "./version";
 import * as core from "@actions/core";
 import * as tc from "@actions/tool-cache";
 
