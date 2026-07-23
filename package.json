@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "GitHub action to use Changie",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "ncc build src/main.ts -o dist --source-map --minify --license licenses.txt",
     "lint": "eslint src/**",
