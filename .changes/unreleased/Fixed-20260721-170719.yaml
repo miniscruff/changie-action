@@ -1,5 +1,0 @@
-kind: Fixed
-body: Reuse the runner tool cache instead of downloading the changie release on every run
-time: 2026-07-21T17:07:19.948908866+02:00
-custom:
-    Issue: "347"
