@@ -1,6 +1,6 @@
 import * as path from "path";
-import * as context from "./context";
-import * as changie from "./changie";
+import * as context from "./context.js";
+import * as changie from "./changie.js";
 import * as core from "@actions/core";
 import * as exec from "@actions/exec";
 import * as io from "@actions/io";
