@@ -25,6 +25,12 @@ jobs:
         body_path: ".changes/${{ steps.latest.outputs.output }}.md"
         tag_name: "${{ steps.latest.outputs.output }}"
 
+    # softprops/action-gh-release only places a tag on creation, so it won't move v3 on its own
+    - name: Move major version tag
+      run: |
+        git tag -f v3
+        git push origin v3 --force
+
     - name: Release
       uses: softprops/action-gh-release@v3
       with:
