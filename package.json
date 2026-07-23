@@ -26,27 +26,27 @@
   },
   "homepage": "https://github.com/miniscruff/changie-action#readme",
   "dependencies": {
-    "@actions/core": "^2.0.0",
-    "@actions/exec": "^2.0.0",
-    "@actions/http-client": "^3.0.0",
-    "@actions/tool-cache": "^3.0.0"
+    "@actions/core": "^3.0.1",
+    "@actions/exec": "^3.0.0",
+    "@actions/http-client": "^4.0.1",
+    "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "25.6.0",
-    "@typescript-eslint/eslint-plugin": "8.58.1",
-    "@typescript-eslint/parser": "8.58.1",
-    "@vercel/ncc": "0.38.4",
-    "dotenv": "17.4.1",
-    "eslint": "10.2.0",
+    "@types/node": "26.1.1",
+    "@typescript-eslint/eslint-plugin": "8.65.0",
+    "@typescript-eslint/parser": "8.65.0",
+    "@vercel/ncc": "0.44.1",
+    "dotenv": "17.4.2",
+    "eslint": "10.7.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-jest": "29.15.2",
-    "eslint-plugin-prettier": "5.5.5",
-    "jest": "30.3.0",
-    "prettier": "3.8.2",
-    "tmp": "0.2.5",
-    "ts-jest": "29.4.9",
+    "eslint-plugin-jest": "29.15.5",
+    "eslint-plugin-prettier": "5.5.6",
+    "jest": "30.4.2",
+    "prettier": "3.9.6",
+    "tmp": "0.2.7",
+    "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
     "ts-node-dev": "2.0.0",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   }
 }
