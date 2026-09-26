@@ -33,21 +33,21 @@
     "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "26.1.1",
-    "@typescript-eslint/eslint-plugin": "8.65.0",
-    "@typescript-eslint/parser": "8.65.0",
-    "@vercel/ncc": "0.44.1",
-    "dotenv": "17.4.2",
-    "eslint": "10.7.0",
+    "@types/node": "26.6.2",
+    "@typescript-eslint/eslint-plugin": "8.70.1",
+    "@typescript-eslint/parser": "8.70.1",
+    "@vercel/ncc": "0.45.0",
+    "dotenv": "18.0.3",
+    "eslint": "10.11.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-jest": "29.15.5",
+    "eslint-plugin-jest": "29.16.6",
     "eslint-plugin-prettier": "5.5.6",
-    "jest": "30.4.2",
-    "prettier": "3.9.6",
+    "jest": "30.5.2",
+    "prettier": "3.9.8",
     "tmp": "0.2.7",
     "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
     "ts-node-dev": "2.0.0",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   }
 }
