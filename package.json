@@ -8,8 +8,7 @@
     "build": "ncc build src/main.ts -o dist --source-map --minify --license licenses.txt",
     "lint": "eslint src/**",
     "format": "eslint --fix src/**",
-    "test": "jest --coverage",
-    "all": "npm run build && npm run format && npm run test"
+    "all": "npm run build && npm run format"
   },
   "repository": {
     "type": "git",
@@ -33,21 +32,16 @@
     "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "10.0.1",
     "@types/node": "26.1.1",
     "@typescript-eslint/eslint-plugin": "8.65.0",
     "@typescript-eslint/parser": "8.65.0",
     "@vercel/ncc": "0.44.1",
-    "dotenv": "17.4.2",
     "eslint": "10.7.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-jest": "29.15.5",
     "eslint-plugin-prettier": "5.5.6",
-    "jest": "30.4.2",
+    "globals": "17.14.0",
     "prettier": "3.9.6",
-    "tmp": "0.2.7",
-    "ts-jest": "29.4.12",
-    "ts-node": "10.9.2",
-    "ts-node-dev": "2.0.0",
     "typescript": "6.0.3"
   }
 }
