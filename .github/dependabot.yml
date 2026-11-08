@@ -17,6 +17,12 @@ updates:
 
   - package-ecosystem: npm
     directory: /
+    ignore:
+      # TypeScript 7 has no JavaScript API yet, which typescript-eslint, and
+      # likely ncc, need. Stay on TypeScript 6 until TypeScript 7 provides one.
+      # https://github.com/typescript-eslint/typescript-eslint/issues/10940
+      - dependency-name: "typescript"
+        versions: [">=6.1.0"]
     schedule:
       interval: "weekly"
       day: "friday"
