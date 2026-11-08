@@ -1,5 +1,5 @@
-import * as os from "os";
-import * as core from "@actions/core";
+import * as os from 'os';
+import * as core from '@actions/core';
 
 export const osPlat: string = os.platform();
 export const osArch: string = os.arch();
@@ -12,8 +12,8 @@ export interface Inputs {
 
 export async function getInputs(): Promise<Inputs> {
   return {
-    version: core.getInput("version") || "latest",
-    args: core.getInput("args"),
-    workdir: core.getInput("workdir") || '.',
+    version: core.getInput('version') || 'latest',
+    args: core.getInput('args'),
+    workdir: core.getInput('workdir') || '.'
   };
 }
